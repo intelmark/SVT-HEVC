@@ -62,11 +62,13 @@ QP iteration is only used when the QP parameter is being used
 
 ## Variable Bitrate Iterations
 
-MIN_BR and MAX_BR define the range of bitrates (bytes/second) that the tests can be run with.
+MIN_BR and MAX_BR define the range of bitrates (bytes/second) that the tests can be run with. \
 VBR_ITERATIONS defines the number of variable bitrate values used in that range.
-MIN_BR defaults to 1000
-MAX_BR defaults to 10000000
-VBR_ITERATIONS defaults to 1 for fast and nightly test modes, and 2 for full test modes
+
+* MIN_BR defaults to 1000
+* MAX_BR defaults to 10000000
+* VBR_ITERATIONS defaults to 1 for fast and nightly test modes, and 2 for full test modes
+
 VBR iteration is only used when VBR parameter is being used
 
 ## Search Area Iterations
