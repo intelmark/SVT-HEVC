@@ -1,17 +1,17 @@
 # SVT-HEVC Test Script Overview
 
-### Python
+## Python
 
 The test script is written in Python.  Supported Python versions include 2.7 and 3.7
 	
 
-### Operating Systems
+## Operating Systems
 
 Test cases can be run on both Linux and Windows platforms.
 
 
 
-### Paths
+## Paths
 
 The following relative paths are defined in the script:
 ENC_PATH   = folder where the SvtHevcEncApp executable can be found - default: "encoders"
@@ -25,7 +25,7 @@ Note: Download the reference decoder from https://hevc.hhi.fraunhofer.de/ and pl
 
 
 
-### Validation Test Modes
+## Validation Test Modes
 
 VALIDATION_TEST_MODE defines which of the 3 validation test modes that the script runs in:
 0 = Fast - Used to quickly verify code check-ins.  Should take around 2 hours
@@ -36,7 +36,7 @@ The script modes differ by the total number of tests that are run.
 
 
 
-### QP/VBR
+## QP/VBR
 
 QP_VBR_MODE defines how the quantization parameter and variable bitrate parameters are specified in the tests:
 0 = Both QP and VBR parameters are used
@@ -44,17 +44,17 @@ QP_VBR_MODE defines how the quantization parameter and variable bitrate paramete
 2 = Only VBR parameter is used
 	
 
-### Encoder Modes
+## Encoder Modes
 
 SPEED_ENC_MODES is a list variable that defines which encoding modes (0-12) are used in the tests. It defaults to [0,6,9]
 	
 
-### Number of Frames
+## Number of Frames
 
 NUM_FRAMES is a variable that defines the number of frames encoded in each test. It default to 20
 	
 
-### Quantization Iterations
+## Quantization Iterations
 
 MIN_QP and MAX_QP define the range of quantization that the tests can be run with.
 QP_ITERATIONS defines the number of random quantization values used in that range.
@@ -65,7 +65,7 @@ QP iteration is only used when the QP parameter is being used
 
 
 
-### Variable Bitrate Iterations
+## Variable Bitrate Iterations
 
 MIN_BR and MAX_BR define the range of bitrates (bytes/second) that the tests can be run with.
 VBR_ITERATIONS defines the number of variable bitrate values used in that range.
@@ -75,17 +75,17 @@ VBR_ITERATIONS defaults to 1 for fast and nightly test modes, and 2 for full tes
 VBR iteration is only used when VBR parameter is being used
 	
 
-### Search Area Iterations
+## Search Area Iterations
 
 SA_ITER defines the size of the search area used in the tests
 	
 
-### Look Ahead Distance Iterations
+## Look Ahead Distance Iterations
 
 LAD_ITER defines the number of intra-periods are used in the tests
 	
 
-### Width Height
+## Width Height
 
 WH_ITER defines the number of width/height pairs are used in the tests
 MIN_WIDTH and MAX_WIDTH define the range of widths (default: 832-4096)
@@ -93,13 +93,13 @@ MIN_HEIGHT and MAX_HEIGHT define the range of heights (default: 480-2304)
 
 
 
-### Debugging
+## Debugging
 
 Setting DEBUG_MODE to a non-zero value will allow the script to run and configure each test to be run, but not actually run the test.
 
 
 
-### Tuning Modes
+## Tuning Modes
 
 The SQ_OQ_MODE variable is used to defined the different tuning modes that the tests are run in:
         0 - SQ, OQ and VMAF
@@ -108,7 +108,7 @@ The SQ_OQ_MODE variable is used to defined the different tuning modes that the t
 
 
 
-### Configuration
+## Configuration
 
 TEST_CONFIGURATION can be set to 0 or 1
         0 = Validation Test - Verify that encoder parameters are functioning properly
@@ -124,7 +124,7 @@ calculated.
 Speed tests are written into a batch file (speed_script.bat/speed_script.sh)
 which can executed outside of this batch file.
 
-### Adding a validation test
+## Adding a validation test
 
 Here are the basic steps to follow when adding a test to validate the correct processing of an encoder parameter.  You can refer to existing tests functions (e.g. sao_test) for reference on creating a new test function.
 	
@@ -201,7 +201,7 @@ Here are the basic steps to follow when adding a test to validate the correct pr
 
    
 
-### How to use the test script:
+## How to use the test script
 
 1. Make sure ENC_PATH, BIN_PATH,YUV_PATH, and TOOLS_PATH folders are created relative to the location of  where the script is located.  The bitstream folder should be empty and cleared for each run.
 2. Build SVT encoder and place the executable in the folder specified under "ENC_PATH"
