@@ -51,14 +51,14 @@ NUM_FRAMES is a variable that defines the number of frames encoded in each test.
 
 ## Quantization Iterations
 
-MIN_QP and MAX_QP define the range of quantization that the tests can be run with.
+MIN_QP and MAX_QP define the range of quantization that the tests can be run with. \
 QP_ITERATIONS defines the number of random quantization values used in that range.
-MIN_QP defaults to 30
-MAX_QP defaults to  50
-QP_ITERATIONS defaults to 1
+
+* MIN_QP defaults to 30
+* MAX_QP defaults to  50
+* QP_ITERATIONS defaults to 1
+
 QP iteration is only used when the QP parameter is being used
-
-
 
 ## Variable Bitrate Iterations
 
