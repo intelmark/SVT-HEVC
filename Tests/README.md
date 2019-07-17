@@ -180,14 +180,14 @@ Here are the basic steps to follow when adding a test to validate the correct pr
 
 ## How to use the test script
 
-1. Make sure ENC_PATH, BIN_PATH,YUV_PATH, and TOOLS_PATH folders are created relative to the location of  where the script is located.  The bitstream folder should be empty and cleared for each run.
-2. Build SVT encoder and place the executable in the folder specified under "ENC_PATH"
-3. Download the reference decoder from https://hevc.hhi.fraunhofer.de/
-4. Build the decoder and place it in the folder specified under "TOOLS_PATH"
-5. Obtain the YUV media files and copy to YUV_PATH 
+1. Make sure `ENC_PATH`, `BIN_PATH`,`YUV_PATH`, and `TOOLS_PATH` folders are created relative to the location of  where the script is located.  The bitstream folder should be empty and cleared for each run.
+2. Build SVT encoder and place the executable in the folder specified under `ENC_PATH`
+3. Download the reference decoder from <https://hevc.hhi.fraunhofer.de/>
+4. Build the decoder and place it in the folder specified under `TOOLS_PATH`
+5. Obtain the YUV media files and copy to `YUV_PATH`
 6. Run script as follows:
 
-```
+``` bash
 python SVT-HEVC_FunctionalTests.py Fast
 python SVT-HEVC_FunctionalTests.py Nightly
 python SVT-HEVC_FunctionalTests.py Full
