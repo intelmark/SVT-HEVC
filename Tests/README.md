@@ -116,80 +116,67 @@ which can executed outside of this batch file.
 
 ## Adding a validation test
 
-Here are the basic steps to follow when adding a test to validate the correct processing of an encoder parameter.  You can refer to existing tests functions (e.g. sao_test) for reference on creating a new test function.
-	
+Here are the basic steps to follow when adding a test to validate the correct processing of an encoder parameter.  You can refer to existing tests functions (e.g. `sao_test`) for reference on creating a new test function.
 
-1. Add a function that runs a test at the bottom of the section labeled FUNCTIONAL TESTS.
+1. Add a function that runs a test at the bottom of the section labeled `FUNCTIONAL TESTS`.
+    1. The name of the function should reflect the test(s) scope (e.g. `myparameter_test`)
+    2. The two parameters to the function should be:
+        1. self - standard Python instance variable
+        2. seq_list - list of sequences (videos) that are to be run
+    3. These parameters are not used in the body of the function, but are passed in the return when the function ends. Example Function signature:
 
-   - The name of the function should reflect the test(s) scope (e.g. myparameter_test)
+          ``` python
+          def myparameter_test(self,seq_list)
+          ```
 
-   - The two parameters to the function should be:
+    4. Add a body to function
+        1. create a variable that defines the name of the test (e.g. `test_name = 'myparameter_test'`)
+        2. create a dictionary that defines parameters and a list of values.  More than one parameter can be included in the dictionary (e.g.)
 
-     - self - standard Python instance variable
+            ``` python
+            combination_test_params = { 'MyParameterName'      : [0, 1],
+                                        'MyOtherParameterName' : [0, 1],
+            }
+            ```
 
-     - seq_list - list of sequences (videos) that are to be run
-       These parameters are not used in the body of the function, but are passed in the 
-       return when the function ends.
+    5. make sure that all parameters used in the dictionary are also include in the default_tokens dictionary created in the `get_param_tokens` function (e.g.)
 
-       Example Function signature:
-
-       ```
-       def myparameter_test(self,seq_list)
-       ```
-
-   - Add a body to function
-
-     - create a variable that defines the name of the test (e.g. test_name = 'myparameter_test')
-
-     - create a dictionary that defines parameters and a list of values.  More than one parameter can be included in the dictionary (e.g.)
-
-       ```
-       combination_test_params = { 'MyParameterName'     : [0, 1],
-                                   'MyOtherParameterName'     : [0, 1],
-       }					   
-       ```
-
-     - make sure that all parameters used in the dictionary are also include in the 
-       default_tokens dictionary created in the get_param_tokens	function (e.g.)
-
-       ```
+        ``` python
         default_tokens = {
         ...
         'MyParameterName' : '-mp',
         'MyOtherParameterName' : '-mop',
         ...
-       ```
+        ```
 
-     - Add a return statement to the function which calls run_functional_tests passing  the sequence list, test name, and test parameters (e.g.)    
+    6. Add a return statement to the function which calls run_functional_tests passing  the sequence list, test name, and test parameters (e.g.)
 
-       ```
+        ``` python
         return self.run_functional_tests(seq_list, test_name, combination_test_params)
-       ```
+        ```
 
-   - Here's the resulting function:	 
+    7. Here's the resulting function:
 
-     ```
-     def myparameter_test(self,seq_list){
-         # Test specific parameters:
-         test_name = 'myparameter_test'
-         combination_test_params = { 'MyParameterName'     : [0, 1],
-                                     'MyOtherParameterName'     : [0, 1],
-                                   }
-         # Run tests
-         return self.run_functional_tests(seq_list, test_name, combination_test_params)
-     ```
+        ``` python
+        def myparameter_test(self,seq_list){
+            # Test specific parameters:
+            test_name = 'myparameter_test'
+            combination_test_params = { 'MyParameterName'      : [0, 1],
+                                        'MyOtherParameterName' : [0, 1],
+                                      }
+            # Run tests
+            return self.run_functional_tests(seq_list, test_name, combination_test_params)
+        ```
 
 2. Add a call to the new function at the end of the set of validation tests that are run.  In the function run_validation_test, add these lines that call your function and tabulate the num_tests and num_passed counters (e.g.)
 
-   ```
+    ``` python
     num_tests, num_passed = self.myparameter_test(seq_list)
     total_tests = total_tests + num_tests
     total_passed = total_passed + num_passed
-   ```
+    ```
 
-3. Try running the script in debug mode.  There should be a txt file with a name based on your test name (e.g. myparameter_test.txt).  Open the text file and verify that  the individual tests run match with the parameters you've specified in your function.
-
-   
+3. Try running the script in debug mode.  There should be a txt file with a name based on your test name (e.g. `myparameter_test.txt`).  Open the text file and verify that  the individual tests run match with the parameters you've specified in your function.
 
 ## How to use the test script
 
