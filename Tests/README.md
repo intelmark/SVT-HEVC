@@ -11,16 +11,16 @@ Test cases can be run on both Linux and Windows platforms.
 ## Paths
 
 The following relative paths are defined in the script:
-ENC_PATH   = folder where the SvtHevcEncApp executable can be found - default: "encoders"
-BIN_PATH   = folder where the created bitstreams are stored - default: "bitstreams"
-YUV_PATH   = folder where the input yuv media file are stored - default: "yuvs"
-TOOLS_PATH = folder where the tools are located (e.g. reference decoder) - default: "tools"
-These folders should be created prior to running the script.
-The bitstream folder should be empty and cleared for each run.
-Note: You should build the SVT encoder and place the executable in the folder specified under "ENC_PATH"
-Note: Download the reference decoder from https://hevc.hhi.fraunhofer.de/ and place in the folder specified under "TOOLS_PATH"		
 
+* `ENC_PATH` = folder where the SvtHevcEncApp executable can be found - default: "encoders"
+* `BIN_PATH` = folder where the created bitstreams are stored - default: "bitstreams"
+* `YUV_PATH` = folder where the input yuv media file are stored - default: "yuvs"
+* `TOOLS_PATH` = folder where the tools are located (e.g. reference decoder) - default: "tools"
 
+These folders should be created prior to running the script. \
+The bitstream folder should be empty and cleared for each run. \
+Note: You should build the SVT encoder and place the executable in the folder specified under `ENC_PATH` \
+Note: Download the reference decoder from [fraunhofer](https://hevc.hhi.fraunhofer.de/) and place in the folder specified under `TOOLS_PATH`
 
 ## Validation Test Modes
 
