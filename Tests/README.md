@@ -36,10 +36,10 @@ The script modes differ by the total number of tests that are run.
 ## QP/VBR
 
 QP_VBR_MODE defines how the quantization parameter and variable bitrate parameters are specified in the tests:
-0 = Both QP and VBR parameters are used
-1 = Only QP parameter is used
-2 = Only VBR parameter is used
-	
+
+* 0 = Both QP and VBR parameters are used
+* 1 = Only QP parameter is used
+* 2 = Only VBR parameter is used
 
 ## Encoder Modes
 
