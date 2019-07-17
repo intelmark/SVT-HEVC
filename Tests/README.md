@@ -92,11 +92,10 @@ Setting DEBUG_MODE to a non-zero value will allow the script to run and configur
 ## Tuning Modes
 
 The SQ_OQ_MODE variable is used to defined the different tuning modes that the tests are run in:
-        0 - SQ, OQ and VMAF
-        1 - SQ Only
-        2 - OQ Only
 
-
+* 0 - SQ, OQ and VMAF
+* 1 - SQ Only
+* 2 - OQ Only
 
 ## Configuration
 
