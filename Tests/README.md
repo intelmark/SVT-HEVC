@@ -100,17 +100,18 @@ The SQ_OQ_MODE variable is used to defined the different tuning modes that the t
 ## Configuration
 
 TEST_CONFIGURATION can be set to 0 or 1
-        0 = Validation Test - Verify that encoder parameters are functioning properly
-        1 = Speed Test - Check the speed of encoding
 
-Both set of tests use different set of media files (VALIDATION_TEST_SEQUENCES
-and SPEED_TEST_SEQUENCES).
+* 0 = Validation Test - Verify that encoder parameters are functioning properly
+* 1 = Speed Test - Check the speed of encoding
 
-Validation tests tabulate sums of the number of test that are run and the 
+Both set of tests use different set of media files (`VALIDATION_TEST_SEQUENCES`
+and `SPEED_TEST_SEQUENCES`).
+
+Validation tests tabulate sums of the number of test that are run and the
 number of tests that pass.  The total time taken to run the full set of tests is
 calculated.
 
-Speed tests are written into a batch file (speed_script.bat/speed_script.sh)
+Speed tests are written into a batch file (`speed_script.bat|speed_script.sh`)
 which can executed outside of this batch file.
 
 ## Adding a validation test
