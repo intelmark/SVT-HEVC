@@ -81,8 +81,8 @@ LAD_ITER defines the number of intra-periods are used in the tests
 
 ## Width Height
 
-WH_ITER defines the number of width/height pairs are used in the tests
-MIN_WIDTH and MAX_WIDTH define the range of widths (default: 832-4096)
+WH_ITER defines the number of width/height pairs are used in the tests \
+MIN_WIDTH and MAX_WIDTH define the range of widths (default: 832-4096) \
 MIN_HEIGHT and MAX_HEIGHT define the range of heights (default: 480-2304)
 
 ## Debugging
