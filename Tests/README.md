@@ -3,13 +3,10 @@
 ## Python
 
 The test script is written in Python.  Supported Python versions include 2.7 and 3.7
-	
 
 ## Operating Systems
 
 Test cases can be run on both Linux and Windows platforms.
-
-
 
 ## Paths
 
@@ -47,12 +44,10 @@ QP_VBR_MODE defines how the quantization parameter and variable bitrate paramete
 ## Encoder Modes
 
 SPEED_ENC_MODES is a list variable that defines which encoding modes (0-12) are used in the tests. It defaults to [0,6,9]
-	
 
 ## Number of Frames
 
 NUM_FRAMES is a variable that defines the number of frames encoded in each test. It default to 20
-	
 
 ## Quantization Iterations
 
@@ -73,17 +68,14 @@ MIN_BR defaults to 1000
 MAX_BR defaults to 10000000
 VBR_ITERATIONS defaults to 1 for fast and nightly test modes, and 2 for full test modes
 VBR iteration is only used when VBR parameter is being used
-	
 
 ## Search Area Iterations
 
 SA_ITER defines the size of the search area used in the tests
-	
 
 ## Look Ahead Distance Iterations
 
 LAD_ITER defines the number of intra-periods are used in the tests
-	
 
 ## Width Height
 
@@ -91,13 +83,9 @@ WH_ITER defines the number of width/height pairs are used in the tests
 MIN_WIDTH and MAX_WIDTH define the range of widths (default: 832-4096)
 MIN_HEIGHT and MAX_HEIGHT define the range of heights (default: 480-2304)
 
-
-
 ## Debugging
 
 Setting DEBUG_MODE to a non-zero value will allow the script to run and configure each test to be run, but not actually run the test.
-
-
 
 ## Tuning Modes
 
@@ -215,4 +203,3 @@ python SVT-HEVC_FunctionalTests.py Fast
 python SVT-HEVC_FunctionalTests.py Nightly
 python SVT-HEVC_FunctionalTests.py Full
 ```
-
