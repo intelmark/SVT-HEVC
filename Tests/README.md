@@ -25,13 +25,13 @@ Note: Download the reference decoder from [fraunhofer](https://hevc.hhi.fraunhof
 ## Validation Test Modes
 
 VALIDATION_TEST_MODE defines which of the 3 validation test modes that the script runs in:
-0 = Fast - Used to quickly verify code check-ins.  Should take around 2 hours
-1 = Nightly - Used as a daily stability check_seq_support. Should take around 18 hours
-2 = Full - Used to verify releases of the products.  Should take around 2 days.
-Note: Estimated time is based on tests ran on Intel Xeon Gold 6140 CPU w/ 94.7 GB memory.
-The script modes differ by the total number of tests that are run. 
 
+* 0 = Fast - Used to quickly verify code check-ins.  Should take around 2 hours
+* 1 = Nightly - Used as a daily stability check_seq_support. Should take around 18 hours
+* 2 = Full - Used to verify releases of the products.  Should take around 2 days.
 
+Note: Estimated time is based on tests ran on Intel Xeon Gold 6140 CPU w/ 94.7 GB memory. \
+The script modes differ by the total number of tests that are run.
 
 ## QP/VBR
 
