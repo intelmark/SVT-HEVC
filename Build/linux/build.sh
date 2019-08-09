@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 
 # Copyright(c) 2018 Intel Corporation
 # SPDX-License-Identifier: BSD-2-Clause-Patent
@@ -15,7 +15,7 @@ function debug {
     mkdir -p ../../Bin/Debug
     cd debug
     PATH=$PATH:/usr/local/bin/
-    cmake ../../..                     \
+    cmake ../../..                           \
         -DCMAKE_BUILD_TYPE=Debug            \
         -DCMAKE_C_COMPILER=$CMAKE_COMPILER        \
         -DCMAKE_ASM_NASM_COMPILER=$CMAKE_ASSEMBLER    \
@@ -32,12 +32,12 @@ function release {
     mkdir -p ../../Bin/Release
     cd release
     PATH=$PATH:/usr/local/bin/
-    cmake ../../..                     \
-        -DCMAKE_BUILD_TYPE=Release            \
-        -DCMAKE_C_COMPILER=$CMAKE_COMPILER        \
+    cmake ../../..                                \
+        -DCMAKE_BUILD_TYPE=Release                 \
+        -DCMAKE_C_COMPILER=$CMAKE_COMPILER          \
         -DCMAKE_ASM_NASM_COMPILER=$CMAKE_ASSEMBLER    \
-        -DCMAKE_AR=`which $AR_COMPILER`            \
-        -DCMAKE_RANLIB=`which $RANLIB_COMPILER`    \
+        -DCMAKE_AR=`which $AR_COMPILER`               \
+        -DCMAKE_RANLIB=`which $RANLIB_COMPILER`        \
 
     # Compile the App
     make -j SvtHevcEncApp
